@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black_overlay">#66000000</color>
+    <color name="colorPrimary">#125688</color>
+    <color name="colorPrimaryDark">#0F4973</color>
+    <color name="primary_light">#40779F</color>
+    <color name="colorAccent">#448AFF</color>
+    <color name="title_text">#FFFFFF</color>
+    <color name="primary_text">#545759</color>
+    <color name="secondary_text">#AAACAF</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#B6B6B6</color>
+    <color name="font_light">#a8175b8b</color>
+
+
+    <color name="grey_light">#FFCCCCCC</color>
+    <color name="dark">#4b4b4b</color>
+    <color name="facebook">#3b5998</color>
+    <color name="twitter">#55ACEE</color>
+    <color name="linkedin">#287bbc</color>
+    <color name="google">#D34836</color>
+</resources>

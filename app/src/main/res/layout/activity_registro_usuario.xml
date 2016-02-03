@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".views.RegistroUsuario">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+            <RelativeLayout
+                android:background="@color/colorPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="?attr/actionBarSize">
+                <TextView
+                    android:id="@+id/lbl_about_you"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center"
+                    android:layout_marginRight="12dp"
+                    android:text="@string/about_you"
+                    android:textSize="23sp"
+                    android:textColor="@color/title_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <ImageButton
+                    android:id="@+id/but_volver_login"
+                    android:contentDescription="@string/accept"
+                    android:src="@drawable/back"
+                    android:background="@null"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+            </RelativeLayout>
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+    <include layout="@layout/content_registro_usuario" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_registro_usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/plus" />
+
+</android.support.design.widget.CoordinatorLayout>

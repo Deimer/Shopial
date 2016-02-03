@@ -1,0 +1,101 @@
+<resources>
+    <string name="app_name">Shopial</string>
+    <string name="app_legend">Shoping Social</string>
+    <string name="url_con">http://shopial.dev</string>
+    <string name="url_test">http://192.168.1.6:80</string>
+
+    <!-- Keys de instagram -->
+    <string name="client_id">0e430cc90dff43c384bfdf24625cc9df</string>
+    <string name="client_secret">6c62cc4bb68f443fa9e5ffcc26195bbd</string>
+    <string name="redirect_uri">oauth://ASNE</string>
+
+    <!-- Keys de facebook -->
+    <string name="facebook_app_id">201541666866103</string>
+    <string name="app_secret">f671ed6b0b3d15d48cef5212bf576eef</string>
+
+    <!-- etiquetas de fragment -->
+    <string name="lbl_social_instagram">Show Instagram profile</string>
+    <string name="lbl_social_facebook">Show Facebook profile</string>
+    <string name="lbl_social_google">Show Google profile</string>
+
+    <!-- etiquetas de pantalla tipo usuario -->
+    <string name="titulo_tipo_usuario">"To start, \n you want to do?"</string>
+    <string name="buy">Buy</string>
+    <string name="sell">Sell</string>
+
+    <!-- Pantalla de login -->
+    <string name="login">Log In</string>
+    <string name="social_login">Social Login</string>
+    <string name="registrar">No account? <u>Register</u> in Shopial</string>
+    <string name="aceptar">Accept</string>
+    <string name="cancelar">Cancel</string>
+    <string name="leyenda_dialog_login">Enter your username and password to validate your login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="logout">Logout</string>
+    <string name="subtitulo_login">"Log In or Sign In with Facebook, \n Google or directly with Shopial"</string>
+
+    <!-- Pantalla de registro -->
+    <string name="registro">Register User</string>
+    <string name="detalle_registro">Register your details</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="username">Username</string>
+    <string name="phone">Phone</string>
+    <string name="country">Country</string>
+    <string name="state">State</string>
+    <string name="city">City</string>
+    <string name="address">Address</string>
+    <string name="opcion_registro">  Or  </string>
+    <string name="about_you">About You</string>
+    <string name="registrar_shopial">Register</string>
+    <string name="registrar_instagram">Register with Instagram</string>
+
+    <!-- Pantalla de login social -->
+    <string name="lbl_name_button_social_facebook">Login via Facebook</string>
+    <string name="lbl_name_button_social_google">Login via Google</string>
+    <string name="lbl_name_button_social_instagram">Login via Instagram</string>
+
+    <!-- Mensajes de informacion, alerta y error -->
+    <string name="inicio_sesion_1">Validating user…</string>
+    <string name="mensaje_error">An error occurred during the process, try again later</string>
+    <string name="alerta_conexion_1">Connection error</string>
+    <string name="alerta_conexion_2">It could not detect an active Internet connection</string>
+    <string name="alerta_campos_vacios">First you must fill in all fields</string>
+    <string name="registrar_usuario">Registering user…</string>
+    <string name="email_vacio">You must provide a valid mail</string>
+    <string name="pass_vacia">You must provide a password of at least 6 characters</string>
+    <string name="name_vacio">You must provide your name before advancing</string>
+    <string name="username_vacio">You must provide a user</string>
+    <string name="country_vacio">You must provide a valid country</string>
+    <string name="state_vacio">You must provide a valid state</string>
+    <string name="city_vacio">You must provide a valid city</string>
+    <string name="country_error">The country is not entered in the database</string>
+    <string name="state_error">The state is not entered in the database</string>
+    <string name="city_error">The city is not entered in the database</string>
+
+    <!-- Pantalla de registro tienda -->
+    <string name="registro_tienda">Register Store</string>
+    <string name="about_you_store">About Your Store</string>
+    <string name="example_store_name">Example: Mobile shop</string>
+    <string name="example_website">Example: www.myshop.com</string>
+    <string name="store_name">Store name</string>
+    <string name="type_product">What kind of products do you sell?</string>
+    <string name="choose_category">Choose a category</string>
+    <string name="long_business">How long are you in business?</string>
+    <string name="physical_store">Do you have a physical store?</string>
+    <string name="company_person">Are you a company or person?</string>
+    <string name="employes">How many employees do you have?</string>
+    <string name="manufacture_products">Do you manufacture your products?</string>
+    <string name="online_store">Do you have an Online Store?</string>
+    <string name="website">Website</string>
+    <string name="select">Select an option</string>
+    <string name="next">Next</string>
+    <string name="title_activity_tienda_registro">TiendaRegistro</string>
+    <string name="title_activity_registro_usuario">RegistroUsuario</string>
+    <string name="title_activity_home">Home</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

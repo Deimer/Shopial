@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back_girl"
+    tools:context=".views.TipoUsuario">
+
+    <FrameLayout
+        android:background="#ce052841"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/lbl_titulo_tipo_usuario"
+                android:gravity="center"
+                android:text="@string/titulo_tipo_usuario"
+                android:textSize="33sp"
+                android:textColor="@color/title_text"
+                android:layout_marginTop="150dp"
+                android:layout_alignParentTop="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <LinearLayout
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="200dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/but_buy"
+                    android:textAllCaps="false"
+                    android:text="@string/buy"
+                    android:textColor="@color/title_text"
+                    android:textSize="20sp"
+                    android:background="@drawable/border_background_white_circle"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content" />
+                <Space
+                    android:background="#81aeaeae"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent" />
+                <Button
+                    android:id="@+id/but_sell"
+                    android:textAllCaps="false"
+                    android:text="@string/sell"
+                    android:textColor="@color/title_text"
+                    android:textSize="20sp"
+                    android:background="@drawable/border_background_white_circle"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </RelativeLayout>
+    </FrameLayout>
+
+</RelativeLayout>
