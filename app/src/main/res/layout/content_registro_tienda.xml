@@ -1,41 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/product_overview_gradient_start_colour"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".views.RegistroTienda"
     tools:showIn="@layout/activity_registro_tienda">
 
-    <LinearLayout
-        android:id="@+id/contenedor_head"
-        android:layout_alignParentTop="true"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <View
-            android:background="@color/icons"
-            android:layout_marginRight="12dp"
-            android:layout_marginLeft="12dp"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"/>
-        <TextView
-            android:id="@+id/lbl_about_store"
-            android:text="@string/about_you_store"
-            android:layout_marginTop="8dp"
-            android:textSize="32sp"
-            android:textColor="@color/colorPrimary"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-    <ScrollView
-        android:id="@+id/contenedor_body"
-        android:layout_below="@+id/contenedor_head"
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nested_body"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
@@ -51,39 +29,16 @@
                 android:layout_height="wrap_content" />
             <EditText
                 android:id="@+id/txt_nombre_tienda"
-                android:layout_marginLeft="13dp"
+                android:layout_marginLeft="8dp"
                 android:paddingLeft="10dp"
                 android:inputType="text"
-                android:textSize="23sp"
+                android:textSize="20sp"
                 android:singleLine="true"
                 android:hint="@string/example_store_name"
                 android:textColor="@color/primary_text"
                 android:textColorHint="@color/secondary_text"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-            <Space
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:layout_width="match_parent"
-                android:layout_height="4dp"/>
-            <TextView
-                android:text="@string/online_store"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="23sp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-            <EditText
-                android:id="@+id/txt_website"
-                android:layout_marginLeft="13dp"
-                android:paddingLeft="10dp"
-                android:inputType="text"
-                android:textSize="23sp"
-                android:singleLine="true"
-                android:hint="@string/example_website"
-                android:textColor="@color/primary_text"
-                android:textColorHint="@color/secondary_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="48dp" />
             <Space
                 android:layout_marginTop="8dp"
                 android:layout_width="match_parent"
@@ -96,9 +51,9 @@
                 android:layout_height="wrap_content" />
             <LinearLayout
                 android:background="@drawable/border_edittext_grey"
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
+                android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
+                android:padding="2dp"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -112,18 +67,30 @@
                     android:textAllCaps="false"
                     android:background="@null"
                     android:layout_width="match_parent"
-                    android:layout_height="47dp">
-                </Button>
+                    android:layout_height="47dp"/>
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/contenedor_tags"
                 android:visibility="gone"
                 android:background="@drawable/border_background_tags"
                 android:layout_marginTop="12dp"
-                android:padding="14dp"
+                android:padding="8dp"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/txt_description_products"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="8dp"
+                android:paddingLeft="10dp"
+                android:inputType="text"
+                android:textSize="20sp"
+                android:singleLine="true"
+                android:hint="@string/description_products"
+                android:textColor="@color/primary_text"
+                android:textColorHint="@color/secondary_text"
+                android:layout_width="match_parent"
+                android:layout_height="48dp" />
             <Space
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
@@ -137,24 +104,19 @@
                 android:layout_height="wrap_content" />
             <LinearLayout
                 android:background="@drawable/border_edittext_grey"
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
+                android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
+                android:padding="2dp"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <Button
-                    android:id="@+id/but_long_business"
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/sp_long_business"
+                    android:textColor="@color/dark"
                     android:text="@string/select"
-                    android:textColor="@color/primary_text"
                     android:textSize="19sp"
-                    android:gravity="left|center"
-                    android:paddingLeft="10dp"
-                    android:textAllCaps="false"
-                    android:background="@null"
                     android:layout_width="match_parent"
-                    android:layout_height="47dp">
-                </Button>
+                    android:layout_height="wrap_content"/>
             </LinearLayout>
             <Space
                 android:layout_marginTop="8dp"
@@ -169,23 +131,19 @@
                 android:layout_height="wrap_content" />
             <LinearLayout
                 android:background="@drawable/border_edittext_grey"
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
+                android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
+                android:padding="2dp"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <Button
-                    android:id="@+id/but_physical_store"
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/sp_physical_store"
+                    android:textColor="@color/dark"
                     android:text="@string/select"
-                    android:textColor="@color/primary_text"
                     android:textSize="19sp"
-                    android:gravity="left|center"
-                    android:paddingLeft="10dp"
-                    android:textAllCaps="false"
-                    android:background="@null"
                     android:layout_width="match_parent"
-                    android:layout_height="47dp"/>
+                    android:layout_height="wrap_content"/>
             </LinearLayout>
             <Space
                 android:layout_marginTop="8dp"
@@ -200,23 +158,19 @@
                 android:layout_height="wrap_content" />
             <LinearLayout
                 android:background="@drawable/border_edittext_grey"
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
+                android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
+                android:padding="2dp"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <Button
-                    android:id="@+id/but_company_person"
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/sp_company_person"
+                    android:textColor="@color/dark"
                     android:text="@string/select"
-                    android:textColor="@color/primary_text"
                     android:textSize="19sp"
-                    android:gravity="left|center"
-                    android:paddingLeft="10dp"
-                    android:textAllCaps="false"
-                    android:background="@null"
                     android:layout_width="match_parent"
-                    android:layout_height="47dp"/>
+                    android:layout_height="wrap_content"/>
             </LinearLayout>
             <Space
                 android:layout_marginTop="8dp"
@@ -231,23 +185,19 @@
                 android:layout_height="wrap_content" />
             <LinearLayout
                 android:background="@drawable/border_edittext_grey"
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
+                android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
+                android:padding="2dp"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <Button
-                    android:id="@+id/but_many_employes"
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/sp_many_employes"
+                    android:textColor="@color/dark"
                     android:text="@string/select"
-                    android:textColor="@color/primary_text"
                     android:textSize="19sp"
-                    android:gravity="left|center"
-                    android:paddingLeft="10dp"
-                    android:textAllCaps="false"
-                    android:background="@null"
                     android:layout_width="match_parent"
-                    android:layout_height="47dp"/>
+                    android:layout_height="wrap_content"/>
             </LinearLayout>
             <Space
                 android:layout_marginTop="8dp"
@@ -261,24 +211,19 @@
                 android:layout_height="wrap_content" />
             <LinearLayout
                 android:background="@drawable/border_edittext_grey"
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
+                android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
+                android:padding="2dp"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <Button
-                    android:id="@+id/but_manufacture_products"
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/sp_manufacture_products"
+                    android:textColor="@color/dark"
                     android:text="@string/select"
-                    android:textColor="@color/primary_text"
                     android:textSize="19sp"
-                    android:gravity="left|center"
-                    android:paddingLeft="10dp"
-                    android:textAllCaps="false"
-                    android:background="@null"
                     android:layout_width="match_parent"
-                    android:layout_height="47dp">
-                </Button>
+                    android:layout_height="wrap_content"/>
             </LinearLayout>
             <Space
                 android:layout_marginTop="8dp"
@@ -293,25 +238,76 @@
                 android:layout_height="wrap_content" />
             <LinearLayout
                 android:background="@drawable/border_edittext_grey"
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
+                android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
+                android:padding="2dp"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <Button
-                    android:id="@+id/but_online_store"
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/sp_online_store"
+                    android:textColor="@color/dark"
                     android:text="@string/select"
-                    android:textColor="@color/primary_text"
                     android:textSize="19sp"
-                    android:gravity="left|center"
-                    android:paddingLeft="10dp"
-                    android:textAllCaps="false"
-                    android:background="@null"
                     android:layout_width="match_parent"
-                    android:layout_height="47dp"/>
+                    android:layout_height="wrap_content"/>
             </LinearLayout>
+            <EditText
+                android:id="@+id/txt_website"
+                android:visibility="gone"
+                android:layout_marginLeft="8dp"
+                android:paddingLeft="10dp"
+                android:inputType="text"
+                android:textSize="20sp"
+                android:singleLine="true"
+                android:hint="@string/example_website"
+                android:textColor="@color/primary_text"
+                android:textColorHint="@color/secondary_text"
+                android:layout_width="match_parent"
+                android:layout_height="48dp" />
+            <Space
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="4dp"/>
+            <TextView
+                android:text="@string/fan_page"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="23sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <LinearLayout
+                android:background="@drawable/border_edittext_grey"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:padding="2dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/sp_fan_page"
+                    android:textColor="@color/dark"
+                    android:text="@string/select"
+                    android:textSize="19sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <EditText
+                android:id="@+id/txt_fan_page"
+                android:visibility="invisible"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="100dp"
+                android:paddingLeft="10dp"
+                android:inputType="text"
+                android:textSize="20sp"
+                android:singleLine="true"
+                android:hint="@string/example_fan_page"
+                android:textColor="@color/primary_text"
+                android:textColorHint="@color/secondary_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
         </LinearLayout>
-    </ScrollView>
+    </android.support.v4.widget.NestedScrollView>
 
 </RelativeLayout>

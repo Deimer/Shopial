@@ -3,7 +3,11 @@ package com.puerto.libre.shopial.Helpers;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+
+import com.puerto.libre.shopial.Models.Store;
+
 import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -28,13 +32,9 @@ public class Validate {
 
     //Metodo para verificar la conectividad a internet
     public boolean connect() {
-        boolean res = false;
-        if (contexto != null){
-            ConnectivityManager cm = (ConnectivityManager) contexto.getSystemService(Context.CONNECTIVITY_SERVICE);
-            NetworkInfo netInfo = cm.getActiveNetworkInfo();
-            res = netInfo != null && netInfo.isConnectedOrConnecting();
-        }
-        return res;
+        ConnectivityManager connMgr = (ConnectivityManager) contexto.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+        return networkInfo != null && networkInfo.isConnected();
     }
 
     public boolean validateString(ArrayList<String> lista){
@@ -48,14 +48,60 @@ public class Validate {
     }
 
     public boolean isEmailValid(String email) {
-        boolean isValid = false;
-        String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
-        Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
-        Matcher matcher = pattern.matcher(email);
-        if (matcher.matches()) {
-            isValid = true;
+        String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
+        java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
+        java.util.regex.Matcher m = p.matcher(email);
+        return m.matches();
+    }
+
+    public boolean isPasswordValid(String password) {
+        return password.length() >= 6;
+    }
+
+    public String formatUsername(String email){
+        String[] parts = email.split("@");
+        return parts[0];
+    }
+
+    public String assignUserInvalid(String email, String usernameSocial){
+        String username;
+        if(usernameSocial == null){
+            if(!email.equalsIgnoreCase("") || email != null){
+                String[] parts = email.split("@");
+                username = parts[0];
+            }else{
+                username = "";
+            }
+        }else{
+            username = usernameSocial;
         }
-        return isValid;
+        return username;
+    }
+
+    public boolean validateValues(List<String> array, String value_error){
+        for (int i = 0; i < array.size(); i++) {
+            if(array.get(i).equalsIgnoreCase(value_error) || array.get(i).equalsIgnoreCase("")){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public int toInt(boolean state){
+        if(state){
+            return 1;
+        }else{
+            return 0;
+        }
+    }
+
+    public String validateStringNull(String path){
+        String string = "no-data";
+        if(path.equalsIgnoreCase("") || path == null){
+            return string;
+        } else {
+            return path;
+        }
     }
 
 }

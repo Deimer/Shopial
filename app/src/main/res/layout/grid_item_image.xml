@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="200dp">
+
+    <ImageView
+        android:id="@+id/img_photo_grid"
+        android:contentDescription="@string/app_name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:transitionName="@string/app_name" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_gravity="bottom"
+        app:layout_widthPercent="100%"
+        app:layout_heightPercent="30%"
+        android:layout_width="0dp "
+        android:layout_height="0dp">
+        <com.hanks.library.AnimateCheckBox
+            android:id="@+id/cb_selected_photo"
+            android:layout_gravity="right"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="8dp"
+            app:animDuration="200"
+            app:checkedColor="@color/red_light"
+            app:lineColor="#fff"
+            app:lineWidth="1.2dp"
+            app:unCheckColor="@color/pinterest"/>
+    </LinearLayout>
+
+</android.support.percent.PercentFrameLayout>

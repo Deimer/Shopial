@@ -5,39 +5,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="8dp"
-    android:paddingRight="8dp"
     android:background="@color/product_overview_gradient_start_colour"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".views.RegistroUsuario"
     tools:showIn="@layout/activity_registro_usuario">
 
-    <ScrollView
-        android:id="@+id/linear_body"
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scroll_body"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
-            android:paddingBottom="14dp"
-            android:paddingTop="8dp"
+            android:paddingBottom="24dp"
             android:layout_marginLeft="4dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <LinearLayout
                 android:id="@+id/contenedor_foto"
-                android:visibility="gone"
-                android:layout_marginBottom="20dp"
+                android:visibility="visible"
                 android:gravity="center"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/profile_image"
-                    xmlns:app="http://schemas.android.com/apk/res-auto"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/user_profile"
-                    app:border_width="2dp"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/camera_dark"
+                    app:border_width="3dp"
                     app:border_color="@color/colorPrimary"/>
             </LinearLayout>
             <LinearLayout
@@ -192,6 +192,7 @@
                         android:inputType="textAutoComplete"
                         android:textSize="20sp"
                         android:hint="@string/country"
+                        android:capitalize="sentences"
                         android:textColor="@color/primary_text"
                         android:textColorHint="@color/secondary_text"
                         android:layout_width="match_parent"
@@ -203,6 +204,7 @@
                         android:inputType="textAutoComplete"
                         android:textSize="20sp"
                         android:hint="@string/state"
+                        android:capitalize="sentences"
                         android:textColor="@color/primary_text"
                         android:textColorHint="@color/secondary_text"
                         android:layout_width="match_parent"
@@ -214,6 +216,7 @@
                         android:inputType="textAutoComplete"
                         android:textSize="20sp"
                         android:hint="@string/city"
+                        android:capitalize="sentences"
                         android:textColor="@color/primary_text"
                         android:textColorHint="@color/secondary_text"
                         android:layout_width="match_parent"
@@ -221,6 +224,22 @@
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-    </ScrollView>
+    </android.support.v4.widget.NestedScrollView>
+    <LinearLayout
+        android:id="@+id/contenedor_buttons_social"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_gravity="bottom|left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/but_register_facebook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/but_register_google"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
 
 </RelativeLayout>

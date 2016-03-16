@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingBottom="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/lbl_dialog_login"
+        android:padding="20dp"
+        android:text="@string/select_social"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:typeface="sans"
+        android:textStyle="bold" />
+    <View
+        android:background="#55404045"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+    <LinearLayout
+        android:id="@+id/contenedor_body_dialog"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/but_login_instagram"
+            android:background="@color/colorPrimary"
+            android:text="@string/login_instagram"
+            android:textAllCaps="false"
+            android:textSize="17sp"
+            android:textColor="@color/title_text"
+            android:drawableLeft="@drawable/instagram_mini_white"
+            android:drawablePadding="-21dp"
+            android:paddingLeft="7dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:elevation="10dp" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="18dp" />
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/but_login_facebook"
+            android:textSize="17sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="9dp"
+            android:paddingBottom="9dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_gravity="center"
+            android:padding="5dp"
+            android:elevation="6dp" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/but_login_google"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_gravity="right"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/but_cancel_dialog_social"
+            android:text="@string/cancelar"
+            android:textColor="@color/title_text"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:elevation="8dp"
+            android:background="@drawable/border_button_blue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>

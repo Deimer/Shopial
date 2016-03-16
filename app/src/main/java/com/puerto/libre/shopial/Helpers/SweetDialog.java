@@ -1,11 +1,9 @@
 package com.puerto.libre.shopial.Helpers;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.widget.Toast;
-
 import com.github.pierry.simpletoast.SimpleToast;
-
+import com.puerto.libre.shopial.R;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
 /**
@@ -29,62 +27,62 @@ public class SweetDialog {
     }
 
     //Funcion que lanza una alerta en un toast con un tiempo definido
-    public void dialogToastOk(String mensaje){
-        SimpleToast.info(contexto, mensaje, "{fa-check-square}");
+    public void dialogToastOk(String message){
+        SimpleToast.info(contexto, message, "{fa-check-square}");
     }
 
     //Funcion que lanza una alerta en un toast con un tiempo definido
-    public void dialogToastInfo(String mensaje){
-        SimpleToast.ok(contexto, mensaje, "{fa-info-circle}");
+    public void dialogToastInfo(String message){
+        SimpleToast.ok(contexto, message, "{fa-info-circle}");
     }
 
     //Funcion que lanza una alerta en un toast con un tiempo definido
-    public void dialogToastWarning(String mensaje){
-        SimpleToast.ok(contexto, mensaje, "{fa-exclamation-triangle}");
+    public void dialogToastWarning(String message){
+        SimpleToast.ok(contexto, message, "{fa-exclamation-triangle}");
     }
 
     //Funcion que lanza una alerta en un toast con un tiempo definido
-    public void dialogToastError(String mensaje){
-        SimpleToast.error(contexto, mensaje, "{fa-times}");
+    public void dialogToastError(String message){
+        SimpleToast.error(contexto, message, "{fa-times}");
     }
 
     //Funcion que lanza una alerta en un toast con un tiempo definido
-    public void dialogToast(String mensaje){
-        Toast.makeText(contexto, mensaje, Toast.LENGTH_LONG).show();
+    public void dialogToast(String message){
+        Toast.makeText(contexto, message, Toast.LENGTH_LONG).show();
     }
 
-    public void dialogBasic(String mensaje){
+    public void dialogBasic(String message){
         new SweetAlertDialog(contexto)
-                .setTitleText(mensaje)
+                .setTitleText(message)
                 .show();
     }
 
-    public void dialogSuccess(String titulo, String mensaje){
+    public void dialogSuccess(String title, String message){
         new SweetAlertDialog(contexto, SweetAlertDialog.SUCCESS_TYPE)
-                .setTitleText(titulo)
-                .setContentText(mensaje)
+                .setTitleText(title)
+                .setContentText(message)
                 .show();
     }
 
-    public void dialogWarning(String titulo, String mensaje){
+    public void dialogWarning(String title, String message){
         new SweetAlertDialog(contexto, SweetAlertDialog.WARNING_TYPE)
-                .setTitleText(titulo)
-                .setContentText(mensaje)
+                .setTitleText(title)
+                .setContentText(message)
                 .show();
     }
 
-    public void dialogError(String titulo, String mensaje){
+    public void dialogError(String title, String message){
         new SweetAlertDialog(contexto, SweetAlertDialog.ERROR_TYPE)
-                .setTitleText(titulo)
-                .setContentText(mensaje)
+                .setTitleText(title)
+                .setContentText(message)
                 .show();
     }
 
     //Funcion que lanza una alerta asincronica para los procesos que requieren tiempo
-    public void dialogProgress(String titulo){
+    public void dialogProgress(String title){
         sweetDialog = new SweetAlertDialog(contexto, SweetAlertDialog.PROGRESS_TYPE);
-        sweetDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
-        sweetDialog.setTitleText(titulo);
+        sweetDialog.getProgressHelper().setBarColor(R.color.colorPrimary);
+        sweetDialog.setTitleText(title);
         sweetDialog.setCancelable(false);
         sweetDialog.show();
     }

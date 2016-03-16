@@ -19,7 +19,7 @@ public class Social {
     private int id;
 
     @DatabaseField(canBeNull = true)
-    private String user_id;
+    private int user_id;
     @DatabaseField(canBeNull = true)
     private String full_name;
     @DatabaseField(canBeNull = true)
@@ -29,20 +29,20 @@ public class Social {
     @DatabaseField(canBeNull = false)
     private String provider;
     @DatabaseField(canBeNull = false)
-    private String id_user_provider;
+    private String uid_provider;
     @DatabaseField(canBeNull = false)
     private String social_token;
 
     public Social(){}
 
-    public Social(String user_id, String full_name, String username, String avatar,
-                        String provider, String id_user_provider, String social_token) {
+    public Social(int user_id, String full_name, String username,
+                  String avatar, String provider, String uid_provider, String social_token) {
         this.user_id = user_id;
         this.full_name = full_name;
         this.username = username;
         this.avatar = avatar;
         this.provider = provider;
-        this.id_user_provider = id_user_provider;
+        this.uid_provider = uid_provider;
         this.social_token = social_token;
     }
 
@@ -50,14 +50,14 @@ public class Social {
     public int getId() {
         return id;
     }
-    public String getUser_id() {
+    public int getUser_id() {
         return user_id;
     }
     public String getFull_name() {
         return full_name;
     }
     public String getUsername() {
-        return username;
+        return "@"+username;
     }
     public String getAvatar() {
         return avatar;
@@ -65,15 +65,15 @@ public class Social {
     public String getProvider() {
         return provider;
     }
-    public String getId_user_provider() {
-        return id_user_provider;
+    public String getUid_provider() {
+        return uid_provider;
     }
     public String getSocial_token() {
         return social_token;
     }
 
     //Setters
-    public void setUser_id(String user_id) {
+    public void setUser_id(int user_id) {
         this.user_id = user_id;
     }
     public void setFull_name(String full_name) {
@@ -88,11 +88,24 @@ public class Social {
     public void setProvider(String provider) {
         this.provider = provider;
     }
-    public void setId_user_provider(String id_user_provider) {
-        this.id_user_provider = id_user_provider;
+    public void setUid_provider(String uid_provider) {
+        this.uid_provider = uid_provider;
     }
     public void setSocial_token(String social_token) {
         this.social_token = social_token;
     }
 
+    @Override
+    public String toString() {
+        return "Social{" +
+            "id=" + id +
+            ", user_id='" + user_id + '\'' +
+            ", full_name='" + full_name + '\'' +
+            ", username='" + username + '\'' +
+            ", avatar='" + avatar + '\'' +
+            ", provider='" + provider + '\'' +
+            ", uid_provider='" + uid_provider + '\'' +
+            ", social_token='" + social_token + '\'' +
+        '}';
+    }
 }

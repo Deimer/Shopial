@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
@@ -17,9 +18,11 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
             app:popupTheme="@style/AppTheme.PopupOverlay">
             <RelativeLayout
                 android:background="@color/colorPrimary"
+                android:gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="?attr/actionBarSize">
                 <TextView
@@ -27,14 +30,16 @@
                     android:layout_alignParentRight="true"
                     android:gravity="center"
                     android:layout_marginRight="12dp"
+                    android:layout_marginTop="13dp"
                     android:text="@string/about_you"
-                    android:textSize="23sp"
+                    android:textSize="28sp"
                     android:textColor="@color/title_text"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent" />
                 <ImageButton
                     android:id="@+id/but_volver_login"
                     android:contentDescription="@string/accept"
+                    android:foregroundGravity="center"
                     android:src="@drawable/back"
                     android:background="@null"
                     android:layout_width="wrap_content"
@@ -44,12 +49,64 @@
     </android.support.design.widget.AppBarLayout>
     <include layout="@layout/content_registro_usuario" />
 
-    <android.support.design.widget.FloatingActionButton
+    <com.github.clans.fab.FloatingActionMenu
         android:id="@+id/fab_registro_usuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        android:src="@drawable/plus" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="4dp"
+        android:layout_marginRight="4dp"
+        fab:menu_backgroundColor="#ccffffff"
+        fab:menu_icon="@drawable/plus"
+        fab:menu_colorNormal="@color/colorAccent"
+        fab:menu_colorPressed="@color/linkedin"
+        app:menu_colorRipple="@color/linkedin"
+        fab:menu_animationDelayPerItem="50"
+        app:menu_showShadow="true"
+        app:menu_shadowColor="@color/shadow"
+        app:menu_shadowRadius="3dp"
+        app:menu_shadowXOffset="1dp"
+        app:menu_shadowYOffset="1dp"
+        app:menu_fab_size="normal"
+        app:menu_fab_show_animation="@anim/fab_scale_up"
+        app:menu_fab_hide_animation="@anim/fab_scale_down"
+        app:fab_label="">
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/next"
+            fab:fab_label="@string/continuar"
+            fab:fab_size="mini"
+            fab:fab_colorNormal="@color/dark"
+            fab:fab_colorPressed="@color/grey_light"/>
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab_instagram"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/instagram_mini"
+            fab:fab_label="@string/lbl_social_instagram"
+            fab:fab_size="mini"
+            fab:fab_colorNormal="@color/colorPrimary"
+            fab:fab_colorPressed="@color/blue_white"/>
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab_facebook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/facebook_mini"
+            fab:fab_label="@string/lbl_social_facebook"
+            fab:fab_size="mini"
+            fab:fab_colorNormal="@color/facebook"
+            fab:fab_colorPressed="@color/blue_light"/>
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab_google"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/google_mini"
+            fab:fab_label="@string/lbl_social_google"
+            fab:fab_size="mini"
+            fab:fab_colorNormal="@color/google"
+            fab:fab_colorPressed="@color/red_light"/>
+    </com.github.clans.fab.FloatingActionMenu>
 
 </android.support.design.widget.CoordinatorLayout>

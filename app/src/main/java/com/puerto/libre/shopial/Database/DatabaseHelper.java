@@ -8,11 +8,14 @@ import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.RuntimeExceptionDao;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
+import com.puerto.libre.shopial.Models.Category;
 import com.puerto.libre.shopial.Models.City;
 import com.puerto.libre.shopial.Models.Country;
+import com.puerto.libre.shopial.Models.Link;
 import com.puerto.libre.shopial.Models.Social;
 import com.puerto.libre.shopial.Models.State;
 import com.puerto.libre.shopial.Models.Store;
+import com.puerto.libre.shopial.Models.Subcategory;
 import com.puerto.libre.shopial.Models.User;
 import com.puerto.libre.shopial.R;
 import java.sql.SQLException;
@@ -41,6 +44,12 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     private RuntimeExceptionDao<State, Integer> stateRuntimeDao = null;
     private Dao<City, Integer> cityDao = null;
     private RuntimeExceptionDao<City, Integer> cityRuntimeDao = null;
+    private Dao<Category, Integer> categoryDao = null;
+    private RuntimeExceptionDao<Category, Integer> categoryRuntimeDao = null;
+    private Dao<Subcategory, Integer> subcategoryDao = null;
+    private RuntimeExceptionDao<Subcategory, Integer> subcategoryRuntimeDao = null;
+    private Dao<Link, Integer> linkeDao = null;
+    private RuntimeExceptionDao<Link, Integer> linkeRuntimeDao = null;
 
     /*Funcion que permite crear la base de datos cuando inicia la aplicacion
     * Usa como parametros;
@@ -56,6 +65,9 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
             TableUtils.createTable(source, Country.class);
             TableUtils.createTable(source, State.class);
             TableUtils.createTable(source, City.class);
+            TableUtils.createTable(source, Category.class);
+            TableUtils.createTable(source, Subcategory.class);
+            TableUtils.createTable(source, Link.class);
         } catch (SQLException sqlEx) {
             Log.e("DatabaseHelper(onCreate)", "Error: " + sqlEx.getMessage());
             throw new RuntimeException(sqlEx);
@@ -78,6 +90,9 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
             TableUtils.dropTable(source, Country.class, true);
             TableUtils.dropTable(source, State.class, true);
             TableUtils.dropTable(source, City.class, true);
+            TableUtils.dropTable(source, Category.class, true);
+            TableUtils.dropTable(source, Subcategory.class, true);
+            TableUtils.dropTable(source, Link.class, true);
             onCreate(db, source);
         } catch (SQLException sqlEx) {
             Log.e("DatabaseHelper(onUpgrade)", "Error: " + sqlEx.getMessage());
@@ -96,16 +111,22 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
             TableUtils.dropTable(source, User.class, true);
             TableUtils.dropTable(source, Social.class, true);
             TableUtils.dropTable(source, Store.class, true);
-            TableUtils.dropTable(source, Country.class, true);
-            TableUtils.dropTable(source, State.class, true);
-            TableUtils.dropTable(source, City.class, true);
+            //TableUtils.dropTable(source, Country.class, true);
+            //TableUtils.dropTable(source, State.class, true);
+            //TableUtils.dropTable(source, City.class, true);
+            //TableUtils.dropTable(source, Category.class, true);
+            //TableUtils.dropTable(source, Subcategory.class, true);
+            TableUtils.dropTable(source, Link.class, true);
             //Recreacion de las tablas
             TableUtils.createTable(source, User.class);
             TableUtils.createTable(source, Social.class);
             TableUtils.createTable(source, Store.class);
-            TableUtils.createTable(source, Country.class);
-            TableUtils.createTable(source, State.class);
-            TableUtils.createTable(source, City.class);
+            //TableUtils.createTable(source, Country.class);
+            //TableUtils.createTable(source, State.class);
+            //TableUtils.createTable(source, City.class);
+            //TableUtils.createTable(source, Category.class);
+            //TableUtils.createTable(source, Subcategory.class);
+            TableUtils.createTable(source, Link.class);
         }catch (SQLException sqlEx){
             Log.i("DatabaseHelper(onResetDataBase)", "Error: " + sqlEx.getMessage());
             throw new RuntimeException(sqlEx);
@@ -126,6 +147,12 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
         stateRuntimeDao = null;
         cityDao = null;
         cityRuntimeDao = null;
+        categoryDao = null;
+        categoryRuntimeDao = null;
+        subcategoryDao = null;
+        subcategoryRuntimeDao = null;
+        linkeDao = null;
+        linkeRuntimeDao = null;
     }
 
     public Dao<User, Integer> getUserDao() throws SQLException {
@@ -180,6 +207,33 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     public RuntimeExceptionDao<City, Integer> getCityRuntimeDao() {
         if(cityRuntimeDao == null) cityRuntimeDao = getRuntimeExceptionDao(City.class);
         return cityRuntimeDao;
+    }
+
+    public Dao<Category, Integer> getCategoryDao() throws SQLException {
+        if(categoryDao == null) categoryDao = getDao(Category.class);
+        return categoryDao;
+    }
+    public RuntimeExceptionDao<Category, Integer> getCategoryRuntimeDao() {
+        if(categoryRuntimeDao == null) categoryRuntimeDao = getRuntimeExceptionDao(Category.class);
+        return categoryRuntimeDao;
+    }
+
+    public Dao<Subcategory, Integer> getSubcategoryDao() throws SQLException {
+        if(subcategoryDao == null) subcategoryDao = getDao(Subcategory.class);
+        return subcategoryDao;
+    }
+    public RuntimeExceptionDao<Subcategory, Integer> getSubcategoryRuntimeDao() {
+        if(subcategoryRuntimeDao == null) subcategoryRuntimeDao = getRuntimeExceptionDao(Subcategory.class);
+        return subcategoryRuntimeDao;
+    }
+
+    public Dao<Link, Integer> getSocialLinkDao() throws SQLException {
+        if(linkeDao == null) linkeDao = getDao(Link.class);
+        return linkeDao;
+    }
+    public RuntimeExceptionDao<Link, Integer> getSocialLinkRuntimeDao() {
+        if(linkeRuntimeDao == null) linkeRuntimeDao = getRuntimeExceptionDao(Link.class);
+        return linkeRuntimeDao;
     }
 
 }

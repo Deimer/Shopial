@@ -9,14 +9,26 @@
     <color name="primary_text">#545759</color>
     <color name="secondary_text">#AAACAF</color>
     <color name="icons">#FFFFFF</color>
+    <color name="pressed">#90ffffff</color>
     <color name="divider">#B6B6B6</color>
     <color name="font_light">#a8175b8b</color>
-
-
     <color name="grey_light">#FFCCCCCC</color>
     <color name="dark">#4b4b4b</color>
+    <color name="dark_template">#242424</color>
+    <color name="shadow">#944b4b4b</color>
+    <color name="blue_white">#377caf</color>
+    <color name="blue_light">#55ACEE</color>
+    <color name="instagram">#125688</color>
     <color name="facebook">#3b5998</color>
-    <color name="twitter">#55ACEE</color>
     <color name="linkedin">#287bbc</color>
+    <color name="twitter">#1D9FEE</color>
     <color name="google">#D34836</color>
+    <color name="pinterest">#D01D15</color>
+    <color name="red_light">#ff8373</color>
+    <color name="disable">#ddaaacaf</color>
+    <color name="transparent">#3bffffff</color>
+
+    <color name="fab_colorNormal">#1565C0</color>
+    <color name="fab_colorPressed">#2272CD</color>
+    <color name="fab_colorRipple">#62B2FF</color>
 </resources>
